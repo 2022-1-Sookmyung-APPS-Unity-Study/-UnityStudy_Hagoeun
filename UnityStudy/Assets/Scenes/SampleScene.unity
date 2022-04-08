@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Cam
   m_TagString: MainCamera
@@ -149,6 +150,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bddccb33166be564db4f0381d6629cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guess: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -298,7 +312,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1633440847}
   - component: {fileID: 1633440846}
-  - component: {fileID: 1633440848}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -371,15 +384,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1633440848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633440845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9c4b9b61b0d2242999150b0aadd87e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
