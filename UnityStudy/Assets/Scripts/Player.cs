@@ -5,10 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed;
-    public float input;
 
     Rigidbody2D rb;
     Animator anim;
+
+    public int health;
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +18,10 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    void FixedUpdate()
     {
+        float input = Input.GetAxisRaw("Horizontal");
+
         if (input != 0)
         {
             anim.SetBool("isRunning", true);
@@ -35,17 +38,16 @@ public class Player : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
-
-
+        rb.velocity = new Vector2(input * speed, rb.velocity.y);
     }
 
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        input = Input.GetAxisRaw("Horizontal");
+    public void TakeDamage(int damageAmount) {
+        health -= damageAmount;
 
-        // Moving player
-        rb.velocity = new Vector2(input * speed, rb.velocity.y);
+        if (health <= 0) {
+            // Destroy player
+            Destroy(gameObject);
+        }
     }
 }
